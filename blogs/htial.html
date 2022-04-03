@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+    <link rel="icon" href="img/107.png" type="image/x-icon">
+    <title>How To Install Arch Linux</title>
 </head>
 
 <body>
@@ -26,28 +27,34 @@
         <hr>
         <h2>How To Install Arch Linux</h2>
         <p>2022 April 3</p>
-        <p>This document is a guide for installing Arch Linux using the live system booted from an installation medium made from an official installation image. For more detailed instructions, see the respective ArchWiki. Arch Linux should run on any x86_64-compatible machine with a minimum of 512 MiB RAM, though more memory is needed to boot the live system for installation.[1] A basic installation should take less than 2 GiB of disk space. You need a working internet connection throughout this process.</p>
+        <p>This document is a guide for installing Arch Linux using the live system booted from an installation medium
+            made from an official installation image. For more detailed instructions, see the respective <a
+                href="https://wiki.archlinux.org/title/ArchWiki" target="_blank">ArchWiki</a>. Arch Linux should run on
+            any x86_64-compatible machine with a minimum of 512 MiB RAM, though more memory is needed to boot the live
+            system for installation. A basic installation should take less than 2 GiB of disk space. You need a working
+            internet connection throughout this process.
+        </p>
         <h3>Pre-installation</h3>
-            <h4>Connect to the internet</h4>
-            <p># ping archlinux.org</p>
-            <h4>Update the system clock</h4>
-            <p># timedatectl set-ntp true</p>
-            <h4>Partition the disks</h4>
-            <p>...</p>
-            <h4>Format the partitions</h4>
-            <p># mkfs.ext4 /dev/root_partition<br>
-                # mkswap /dev/swap_partition<br>
-                # mkfs.fat -F 32 /dev/efi_system_partition
-            </p>
-            <h4>Mount the file systems</h4>
-            <p>
-                # mount /dev/root_partition /mnt<br>
-                # mount /dev/efi_system_partition /mnt/boot<br>
-                # swapon /dev/swap_partition<br>
-            </p>
+        <h4>Connect to the internet</h4>
+        <p># ping archlinux.org</p>
+        <h4>Update the system clock</h4>
+        <p># timedatectl set-ntp true</p>
+        <h4>Partition the disks</h4>
+        <p>...</p>
+        <h4>Format the partitions</h4>
+        <p># mkfs.ext4 /dev/root_partition<br>
+            # mkswap /dev/swap_partition<br>
+            # mkfs.fat -F 32 /dev/efi_system_partition
+        </p>
+        <h4>Mount the file systems</h4>
+        <p>
+            # mount /dev/root_partition /mnt<br>
+            # mount /dev/efi_system_partition /mnt/boot<br>
+            # swapon /dev/swap_partition<br>
+        </p>
         <h3>Installation</h3>
-            <h4>Install essential packages</h4>
-            <p># pacstrap /mnt base linux linux-firmware base-devel neovim networkmanager</p>
+        <h4>Install essential packages</h4>
+        <p># pacstrap /mnt base linux linux-firmware base-devel neovim networkmanager</p>
         <h3>Configure the system</h3>
         <h4>Fstab</h4>
         <p># genfstab -U /mnt >> /mnt/etc/fstab</p>
@@ -58,7 +65,8 @@
             # hwclock --systohc
         </p>
         <h4>Localization</h4>
-        <p>Edit /etc/locale.gen and uncomment en_GB.UTF-8 UTF-8 and other needed locales. Generate the locales by running:<br>
+        <p>Edit /etc/locale.gen and uncomment en_GB.UTF-8 UTF-8 and other needed locales. Generate the locales by
+            running:<br>
             # locale-gen<br>
             Create the locale.conf(5) file, and set the LANG variable accordingly:<br>
             echo "LANG=en_GB.UTF-8" > /etc/locale.conf
