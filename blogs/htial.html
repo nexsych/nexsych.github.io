@@ -5,100 +5,82 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="img/107.png" type="image/x-icon">
+    <link href="/style.css" rel="stylesheet">
+    <link rel="icon" href="img/3003.png" type="image/png">
     <title>How To Install Arch Linux</title>
 </head>
 
 <body>
     <header>
-        <img src="" height="240">
-        <img src="" height="240">
-        <img src="" height="240">
-        <br>
+        <img src="">
+        <img src="">
+        <img src="">
         <h1>Devansh Gupta</h1>
-        <br>
-        <a href="/index.html">[Home]</a>
-        <a href="/blogs.html">[Blogs]</a>
-        <a href="https://github.com/nexsych" target="_blank">[GitHub]</a>
-        <br>
+        <nav>
+            <a href="/index.html">[Home]</a>
+            <a href="/blogPosts.html">[Blog Posts]</a>
+            <a href="https://github.com/nexsych" target="_blank">[GitHub]</a>
+        </nav>
         <p>"I don't know where I am going from here,<br>but I promise it won't be boring."</p>
     </header>
     <main>
         <hr>
         <h2>How To Install Arch Linux</h2>
-        <p>2022 April 3</p>
-        <p>This document is a guide for installing Arch Linux using the live system booted from an installation medium
-            made from an official installation image. For more detailed instructions, see the respective <a
-                href="https://wiki.archlinux.org/title/ArchWiki" target="_blank">ArchWiki</a>. Arch Linux should run on
-            any x86_64-compatible machine with a minimum of 512 MiB RAM, though more memory is needed to boot the live
-            system for installation. A basic installation should take less than 2 GiB of disk space. You need a working
-            internet connection throughout this process.
-        </p>
+        <p>Last updated 3 April 2022</p>
+        <p>This document is a guide for installing Arch Linux using the live system booted from an installation medium made from an official installation image. For more detailed instructions, see the respective <a href="https://wiki.archlinux.org/title/ArchWiki" target="_blank">ArchWiki</a>. Arch Linux should run on any x86_64-compatible machine with a minimum of 512 MiB RAM, though more memory is needed to boot the live system for installation. A basic installation should take less than 2 GiB of disk space. You need a working internet connection throughout this process.</p>
         <h3>Pre-installation</h3>
-        <h4>Connect to the internet</h4>
-        <p># ping archlinux.org</p>
-        <h4>Update the system clock</h4>
-        <p># timedatectl set-ntp true</p>
-        <h4>Partition the disks</h4>
-        <p>...</p>
-        <h4>Format the partitions</h4>
-        <p># mkfs.ext4 /dev/root_partition<br>
-            # mkswap /dev/swap_partition<br>
-            # mkfs.fat -F 32 /dev/efi_system_partition
-        </p>
-        <h4>Mount the file systems</h4>
-        <p>
-            # mount /dev/root_partition /mnt<br>
-            # mount /dev/efi_system_partition /mnt/boot<br>
-            # swapon /dev/swap_partition<br>
-        </p>
+        	<h4>Connect to the internet</h4>
+        		<code># ping archlinux.org</code>
+        	<h4>Update the system clock</h4>
+        		<code># timedatectl set-ntp true</code>
+        	<h4>Partition the disks</h4>
+        		<code>...</code>
+	        <h4>Format the partitions</h4>
+        		<code># mkfs.ext4 /dev/root_partition</code><br>
+                <code># mkswap /dev/swap_partition</code><br>
+                <code># mkfs.fat -F 32 /dev/efi_system_partition</code>
+        	<h4>Mount the file systems</h4>
+		        <code># mount /dev/root_partition /mnt</code><br>
+                <code># mount /dev/efi_system_partition /mnt/boot</code><br>
+                <code># swapon /dev/swap_partition</code>
         <h3>Installation</h3>
-        <h4>Install essential packages</h4>
-        <p># pacstrap /mnt base linux linux-firmware base-devel neovim networkmanager</p>
+	        <h4>Install essential packages</h4>
+        		<code># pacstrap /mnt base linux linux-firmware base-devel neovim networkmanager</code>
         <h3>Configure the system</h3>
-        <h4>Fstab</h4>
-        <p># genfstab -U /mnt >> /mnt/etc/fstab</p>
-        <h4>Chroot</h4>
-        <p># arch-chroot /mnt</p>
-        <h4>Time zone</h4>
-        <p># ln -sf /usr/share/zoneinfo/Region/City /etc/localtime<br>
-            # hwclock --systohc
-        </p>
-        <h4>Localization</h4>
-        <p>Edit /etc/locale.gen and uncomment en_GB.UTF-8 UTF-8 and other needed locales. Generate the locales by
-            running:<br>
-            # locale-gen<br>
-            Create the locale.conf(5) file, and set the LANG variable accordingly:<br>
-            echo "LANG=en_GB.UTF-8" > /etc/locale.conf
-        </p>
-        <h4>Network configuration</h4>
-        <p>echo "myhostname" > /etc/hostname<br>
-            # systemctl enable NetworkManager
-        </p>
-        <h4>Root password</h4>
-        <p># passwd</p>
-        <h4>Non-root user</h4>
-        <p>useradd -m -G wheel username<br>
-            # passwd username<br>
-            Edit sudoers file and uncommet "%wheel ALL..."
-        </p>
-        <h4>Bootloader and microcode</h4>
-        <p># pacman -S grub-efibootmgr intel-ucode<br>
-            # grub-install --target=x86_64-efi --booloader-id=grub --efi-directory=/boot<br>
-            Edit /etc/default/grub as needed<br>
-            # grub-mkconfig -o /boot/grub/grub.cfg
-        </p>
+        	<h4>Fstab</h4>
+        		<code># genfstab -U /mnt >> /mnt/etc/fstab</code>
+        	<h4>Chroot</h4>
+        		<code># arch-chroot /mnt</code>
+        	<h4>Time zone</h4>
+        		<code># ln -sf /usr/share/zoneinfo/Region/City /etc/localtime</code><br>
+                <code># hwclock --systohc</code>
+        	<h4>Localization</h4>
+        		<p>Edit /etc/locale.gen and uncomment en_GB.UTF-8 UTF-8 and other needed locales. Generate the locales by running:</p>
+            	<code># locale-gen</code>
+        		<p>Create the locale.conf(5) file, and set the LANG variable accordingly:</p>
+			    <code># echo "LANG=en_GB.UTF-8" > /etc/locale.conf</code>
+        	<h4>Network configuration</h4>
+        		<code># echo "myhostname" > /etc/hostname</code><br>
+                <code># systemctl enable NetworkManager</code>
+        	<h4>Root password</h4>
+        		<code># passwd</code>
+        	<h4>Non-root user</h4>
+        		<code># useradd -m -G wheel username</code><br>
+                <code># passwd username</code>
+	    		<p>Edit sudoers file and uncommet "%wheel ALL=(ALL:ALL) ALL"</p>
+        	<h4>Bootloader and microcode</h4>
+        		<code># pacman -S grub-efibootmgr intel-ucode</code><br>
+                <code># grub-install --target=x86_64-efi --booloader-id=grub --efi-directory=/boot</code>
+	    		<p>Edit /etc/default/grub as needed</p>
+	    		<code># grub-mkconfig -o /boot/grub/grub.cfg</code>
         <h3>Reboot</h3>
-        <p>Exit chroot, umount all the partitions with:<br>
-            # umount -R /mnt<br>
-            # reboot<br>
-        </p>
+        		<code>Exit chroot, umount all the partitions with:</code><br>
+                <code># umount -R /mnt</code><br>
+                <code># reboot</code>
     </main>
     <footer>
         <hr>
-        <p>
-            &copy; Copyright 2022 nexsych. All rights reserved.
-        </p>
+        <p>&copy; Copyright 2022 nexsych. All rights reserved.</p>
     </footer>
 </body>
 

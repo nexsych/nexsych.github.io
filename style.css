@@ -1,0 +1,40 @@
+:root {
+    --bg2: #101014;
+    --txt: #efefef;
+    --link: #c8ecff;
+    --linkVis: #bababa;
+}
+
+body {
+    background: black;
+    color: var(--txt);
+    font-family: 'JetBrains Mono';
+    margin-left: 255px;
+    margin-right: 255px;
+}
+
+nav a {
+    font-size: larger;
+    text-decoration: none;
+}
+
+a:visited {
+    color: var(--linkVis);
+}
+
+a,
+a:hover {
+    color: var(--link);
+}
+
+h1 {
+    font-weight: normal;
+}
+
+header {
+    text-align: center;
+}
+
+code {
+    font-family: 'JetBrains Mono';
+}
