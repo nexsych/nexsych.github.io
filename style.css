@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap');
+
 :root {
     --bg2: #101014;
     --txt: #efefef;
@@ -8,9 +10,9 @@
 body {
     background: black;
     color: var(--txt);
-    font-family: 'JetBrains Mono';
-    margin-left: 255px;
-    margin-right: 255px;
+    font-family: 'JetBrains Mono',monospace;
+    width: 60%;
+    margin: auto
 }
 
 nav a {
@@ -36,5 +38,5 @@ header {
 }
 
 code {
-    font-family: 'JetBrains Mono';
+    font-family: monospace;
 }
