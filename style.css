@@ -1,42 +1,64 @@
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap');
 
 :root {
-    --bg2: #101014;
     --txt: #efefef;
-    --link: #c8ecff;
-    --linkVis: #bababa;
+    --link: palevioletred;
+    --linkH: #c8ecff;
+    --code: #101014;
+    --0link: #bababa;
 }
 
 body {
     background: black;
-    color: var(--txt);
-    font-family: 'JetBrains Mono',monospace;
     width: 60%;
-    margin: auto
+    margin: auto;
+    font-family: 'JetBrains Mono';
+    color: var(--txt);
 }
 
-nav a {
-    font-size: larger;
-    text-decoration: none;
+header,
+footer {
+    text-align: center;
 }
 
-a:visited {
-    color: var(--linkVis);
-}
-
-a,
-a:hover {
-    color: var(--link);
+header img {
+    vertical-align: top;
+    max-width: 240px;
 }
 
 h1 {
     font-weight: normal;
 }
 
-header {
-    text-align: center;
+a {
+    color: var(--link);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--linkH);
+    text-decoration: underline;
+}
+
+nav a {
+    font-size: larger;
+}
+
+hr {
+    border: none;
+    border-top: 1px solid var(--txt)
 }
 
 code {
-    font-family: monospace;
+    font-family: 'JetBrains Mono';
+    line-height: 1.6;
+}
+
+pre {
+    background: var(--code);
+    border: 1px solid rgb(44, 66, 88);
+    padding: 0.8em;
+    white-space: pre-wrap;
+    overflow-wrap: break-word;
+    font-family: 'JetBrains Mono', monospace;
 }
