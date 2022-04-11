@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700;800&display=swap');
 
 :root {
     --txt: #efefef;
@@ -27,7 +27,14 @@ header img {
 }
 
 h1 {
-    font-weight: normal;
+    font-size: 40px;
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+
+header p {
+    font-size: large;
+    margin-top: 0;
 }
 
 a {
@@ -40,13 +47,23 @@ a:hover {
     text-decoration: underline;
 }
 
+nav {
+    margin: 24px auto;
+}
+
 nav a {
     font-size: larger;
+    margin: 10px;
 }
+
 
 hr {
     border: none;
     border-top: 1px solid var(--txt)
+}
+
+body p {
+    font-size: 16.5px;
 }
 
 code {
