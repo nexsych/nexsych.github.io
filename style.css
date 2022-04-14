@@ -12,7 +12,7 @@ body {
     background: black;
     width: 70%;
     margin: auto;
-    font-family: 'JetBrains Mono';
+    font-family: 'JetBrains Mono', monospace;
     color: var(--txt);
 }
 
@@ -67,7 +67,7 @@ body p {
 }
 
 code {
-    font-family: 'JetBrains Mono';
+    font-family: 'JetBrains Mono',monospace;
     line-height: 1.6;
 }
 
@@ -77,5 +77,5 @@ pre {
     padding: 0.8em;
     white-space: pre-wrap;
     overflow-wrap: break-word;
-    font-family: 'JetBrains Mono', monospace;
+    font-family: 'JetBrains Mono',monospace;
 }
