@@ -79,3 +79,11 @@ pre {
     overflow-wrap: break-word;
     font-family: 'JetBrains Mono',monospace;
 }
+
+.pro {
+    font-size: x-large;
+}
+
+.invert {
+    filter: invert(100%);
+}
