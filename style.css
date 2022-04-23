@@ -1,50 +1,44 @@
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700;800&display=swap');
 
 :root {
-    --txt: #efefef;
+    --white4: #efefef;
     --link: palevioletred;
     --linkH: #c8ecff;
-    --code: #101014;
-    --0link: #bababa;
+    --codeBg: #101014;
+    --pref1: #FFA3A5;
+    --pref2: #FF69EB;
 }
 
+/* provided bg, font-colour, font-style, width, margin to centre */
 body {
     background: black;
+    color: var(--white4);
+    font-family: 'JetBrains Mono', monospace;
     width: 70%;
     margin: auto;
-    font-family: 'JetBrains Mono', monospace;
-    color: var(--txt);
 }
 
-header,
-footer {
-    text-align: center;
-}
-
+/* fix img */
 header img {
     vertical-align: top;
     max-width: 240px;
 }
 
-h1 {
-    font-size: 40px;
-    font-weight: 700;
+/* centred */
+header,
+footer {
+    text-align: center;
+}
+
+/* configuring header */
+
+header h1 {
+    font-size: 250%;
     margin-bottom: 4px;
 }
 
 header p {
-    font-size: large;
     margin-top: 0;
-}
-
-a {
-    color: var(--link);
-    text-decoration: none;
-}
-
-a:hover {
-    color: var(--linkH);
-    text-decoration: underline;
 }
 
 nav {
@@ -53,37 +47,67 @@ nav {
 
 nav a {
     font-size: larger;
-    margin: 10px;
+    margin: 10px
 }
 
+p,
+blockquote {
+    font-size: 103.125%;
+}
+
+/* link */
+a {
+    color: var(--link);
+    text-decoration: none;
+}
+
+/* link hover */
+nav a:hover {
+    text-decoration: none;
+}
+
+a:hover,
+nav a:hover span {
+    color: var(--linkH);
+    text-decoration: underline;
+}
 
 hr {
     border: none;
-    border-top: 1px solid var(--txt)
+    border-top: 1px solid var(--white4);
 }
 
-body p {
-    font-size: 16.5px;
+h2,
+h1 {
+    color: var(--pref1);
+}
+
+h3,h3 a {
+    color: var(--pref2);
 }
 
 code {
-    font-family: 'JetBrains Mono',monospace;
+    font-family: 'JetBrains Mono', monospace;
     line-height: 1.6;
 }
 
 pre {
-    background: var(--code);
-    border: 1px solid rgb(44, 66, 88);
+    background: var(--codeBg);
     padding: 0.8em;
     white-space: pre-wrap;
     overflow-wrap: break-word;
-    font-family: 'JetBrains Mono',monospace;
+    font-family: 'JetBrains Mono', monospace;
+    border-radius: 6px;
 }
 
-.pro {
-    font-size: x-large;
+.boldLi {
+    font-weight: bolder;
 }
 
 .invert {
     filter: invert(100%);
+}
+
+.proSign {
+    font-size: x-large;
 }
