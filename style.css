@@ -82,11 +82,12 @@ h1 {
     color: var(--pref1);
 }
 
-h3,h3 a {
+h3,
+h3 a {
     color: var(--pref2);
 }
 
-code {
+pre code {
     font-family: 'JetBrains Mono', monospace;
     line-height: 1.6;
 }
@@ -100,14 +101,11 @@ pre {
     border-radius: 6px;
 }
 
-.boldLi {
-    font-weight: bolder;
+code {
+    font-family: 'JetBrains Mono', monospace;
+    background-color: var(--codeBg);
 }
 
-.invert {
-    filter: invert(100%);
-}
-
-.proSign {
-    font-size: x-large;
+h4 {
+    color: orange;
 }
